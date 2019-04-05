@@ -58,14 +58,34 @@ var restaurantFinderApplication = {
   applicationName: "Restaurant Finder",
   applicationVersion: "1.0",
   restaurants: restaurants,
-  findAvailableRestaurants: function(numberOfPeople) {
-    // Complete here
+
+
+/*1) Define a method findAvailableRestaurants which takes a number of people in parameter and returns
+all the restaurant names which have the required number of seats available at the moment.
+*/
+  findAvailableRestaurants: function (numberOfPeople) {
+    return restaurants.filter(seatNumber => seatNumber.totalSeats - seatNumber.numberOfCustomers >= numberOfPeople).map(
+      function(element){
+        return element.name;
+      }
+    )
   },
+/*2) Define a method findRestaurantServingDish which takes a dish name in parameter and returns
+all the restaurant names serving this dish.
+*/
   findRestaurantServingDish: function(dishName) {
-    // Complete here
+    return restaurants.filter(element => element.menu.includes(dishName)).map(
+      function(element){
+        return element.name;
+      }
+    )
   },
+
+/*3) Define a method countNumberOfRestaurantsInArea which takes an area of Glasgow in parameter (centre, west),
+and returns the number of restaurants in this area.
+*/
   countNumberOfRestaurantsInArea: function(area) {
-    // Complete here
+    return restaurants.filter(element => element.address.area.includes(area)).length
   }
 };
 

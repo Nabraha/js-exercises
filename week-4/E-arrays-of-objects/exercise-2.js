@@ -39,12 +39,30 @@ DO NOT EDIT ANYTHING ABOVE THIS LINE
 WRITE YOUR CODE BELOW
 */
 
+// var array2 = array1.filter(something)
+// array3 = array2.map(else)
 
-var destinationNamesWithin500Kms = // Complete here
+// arrayX = array1.filter(something).map(else)
+//1) Filter the travelDestinations array to return all destination names reachable within 500 kms.
+var destinationNamesWithin500Kms =  travelDestinations.filter(function(element){
+   return element.distanceKms <= 500 ? true : false // Elvis
+}).map(function(element){
+  return element.destinationName;
+})// Complete here
 
-var destinationNameReachableByFerry = // Complete here
+//2) Find a destination name reachable by ferry.
+var destinationNameReachableByFerry =  travelDestinations.filter(function(element){
+  return element.transportations.includes("ferry");
+}).map(function(element){
+  return element.destinationName;
+})// Complete here
 
-var destinationNamesMoreThan300KmsAwayByTrain = // Complete here (PRINT THE RESULT IN THE CONSOLE USING FOREACH)
+//3) Print in the console all the destination names more than 300 kms far away and reachable by train.
+var destinationNamesMoreThan300KmsAwayByTrain = travelDestinations.filter(function(element1){
+  return element1.distanceKms > 300 && element1.transportations.includes("train");
+}).map(function(element){
+  return element.destinationName;
+})// Complete here (PRINT THE RESULT IN THE CONSOLE USING FOREACH)
 
 
 /*

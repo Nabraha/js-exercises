@@ -19,6 +19,7 @@ var newCurrentOwner = {
   lastName: "Hernandez"
 };
 
+
 /*
   DO NOT EDIT ANYTHING ABOVE THIS LINE
 
@@ -26,8 +27,14 @@ var newCurrentOwner = {
 */
 
 // - assign the value of the variable 'newCurrentOwner' as the value to the house's "currentOwner"
+house.currentOwner = newCurrentOwner;
+console.log(house.currentOwner);
+
 // - from the list of previous owners, replace only "John A." with "Stephen B."
+house.previousOwners[1] = 'Stephen B.';
+
 // - give the house a new property called 'isForSale' with the value 'false'
+house.isForSale = false;
 
 /*
   DO NOT EDIT ANYTHING BELOW THIS LINE

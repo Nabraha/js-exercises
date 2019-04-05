@@ -16,8 +16,22 @@ var coffeeMachine = {
     flatWhite: 3.0
   },
   insertedAmount: 0,
-  insertMoney: function(amount) {},
-  getCoffee: function(coffee) {}
+
+ // insertMoney takes an amount in parameter to add money in the coffee machine.
+  insertMoney: function(amount) {
+    this.insertedAmount = amount;
+  },
+
+  //getCoffee takes a coffee type in parameter and dispends the selected coffee
+  //only if the inserted amount is greater or equal than the price of the coffee!
+  getCoffee: function(coffee) {
+    if(this.insertedAmount >= this.prices[coffee]){
+      return 'Please take your: ' + coffee;
+    }else{
+      return "Sorry you don't have enough money for a" + coffee;
+    }
+
+  }
 };
 
 /*

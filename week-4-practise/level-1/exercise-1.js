@@ -39,6 +39,22 @@ var writers = [
   }
 ];
 
+
+
+ writers.forEach(function(element){
+   console.log("Hi, my name is " + element.firstName + " " + element.lastName + " " + element.lastName + ".I am " + element.age + "  years old, and work as a " + element.occupation +".");
+    })
+
 /*
 If you want an extra challenge, only `console.log()` the writers that are alive.
 */
+
+console.log("====================================================================");
+function displayAliveWrites() {
+  return writers.filter(element => element.alive == true).map(
+    function (element) {
+      return "Hi, my name is " + element.firstName + " " + element.lastName  + ".I am " + element.age + "  years old, and work as a "+ element.occupation+".";
+    }
+  )
+}
+console.log(displayAliveWrites());
